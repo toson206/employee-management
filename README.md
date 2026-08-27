@@ -60,13 +60,13 @@ Server chạy tại: `http://127.0.0.1:8000`
 
 ## API Endpoints
 
-| Method  | Endpoint             | Mô tả                  |
-| `POST`  | `/api/employees/`    | Thêm nhân viên         |
-| `GET`   | `/api/employees/`    | Lấy danh sách nhân viên|
-| `GET`   | `/api/employees/{id}`| Lấy nhân viên theo ID  |
-| `PUT`   | `/api/employees/{id}`| Cập nhật nhân viên     |
-| `DELETE`| `/api/employees/{id}`| Xóa nhân viên          |
-
+| Method | Endpoint | Mô tả |
+|---|---|---|
+| POST | `/api/employees/` | Thêm nhân viên |
+| GET | `/api/employees/` | Lấy danh sách nhân viên |
+| GET | `/api/employees/{id}` | Lấy thông tin nhân viên theo ID |
+| PUT | `/api/employees/{id}` | Cập nhật thông tin nhân viên |
+| DELETE | `/api/employees/{id}` | Xóa nhân viên |
 ## Testing
 
 Sử dụng Swagger UI để kiểm tra toàn bộ API CRUD trực tiếp tại:
