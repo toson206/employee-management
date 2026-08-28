@@ -1,4 +1,3 @@
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
@@ -177,4 +176,3 @@ def delete_employee(
         "message": "Đã xóa nhân viên thành công",
         "employee": deleted_employee
     }
-
