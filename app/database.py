@@ -1,15 +1,33 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+import os
 
-DATABASE_URL = "postgresql://postgres:1@localhost:5432/employee_db"
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
+from sqlalchemy.engine import URL
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+
+load_dotenv()
+
+
+DATABASE_URL = URL.create(
+    drivername="postgresql+psycopg2",
+    username=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    host=os.getenv("DB_HOST"),
+    port=int(os.getenv("DB_PORT") or 5432),
+    database=os.getenv("DB_NAME"),
+)
+
 
 engine = create_engine(DATABASE_URL)
+
 
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
     bind=engine
 )
+
 
 Base = declarative_base()
 
@@ -20,13 +38,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
-def create_tables():
-    from . import models
-    Base.metadata.create_all(bind=engine)
-
-
-if __name__ == "__main__":
-    with engine.connect() as connection:
-        print("Kết nối PostgreSQL thành công!")
