@@ -120,7 +120,7 @@ Khi server đang chạy, bạn mở trình duyệt và truy cập:
 
 | Phương thức | Endpoint | Mô tả |
 | :--- | :--- | :--- |
-| `GET` | `/api/employees/` | Lấy danh sách nhân viên (hỗ trợ phân trang `?skip=0&limit=100`) |
+| `GET` | `/api/employees/` | Lấy danh sách nhân viên |
 | `GET` | `/api/employees/{id}` | Lấy chi tiết thông tin một nhân viên theo ID |
 | `POST` | `/api/employees/` | Thêm mới một hồ sơ nhân viên |
 | `PUT` | `/api/employees/{id}` | Cập nhật thông tin nhân viên theo ID |
