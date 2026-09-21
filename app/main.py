@@ -45,4 +45,8 @@ def health_check():
 
 
 
-
+
+@app.get("/api/test")
+def test_api():
+    return {"message": "Test push code"}
+
