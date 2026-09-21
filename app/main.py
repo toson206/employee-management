@@ -26,5 +26,23 @@ app.include_router(employees_router)
 app.include_router(users_router)
 
 
+@app.get("/", tags=["System"])
+def root():
+    return {
+        "message": "Welcome to Employee Management API",
+        "docs_url": "/docs"
+    }
+
+
+@app.get("/health", tags=["System"])
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "Employee Management API",
+        "version": "1.0.0"
+    }
+
+
+
 
 
